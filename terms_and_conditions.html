@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Manager — Terms & Conditions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8B5CF6;
+            --primary-dark: #6D28D9;
+            --primary-light: #C4B5FD;
+            --secondary: #EC4899;
+            --accent: #F43F5E;
+            --bg: #F8FAFC;
+            --surface: #FFFFFF;
+            --surface-muted: #F1F5F9;
+            --border: #E2E8F0;
+            --text-primary: #0F172A;
+            --text-secondary: #64748B;
+            --text-faint: #94A3B8;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow-lg: 0 20px 25px -5px rgba(139, 92, 246, 0.08), 0 10px 10px -5px rgba(139, 92, 246, 0.04);
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 28px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        /* Header Hero Banner */
+        .hero {
+            background: linear-gradient(135deg, #1E1B4B 0%, #4C1D95 50%, #7C3AED 100%);
+            color: white;
+            padding: 60px 20px 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.35) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 6px 16px;
+            border-radius: 100px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            color: var(--primary-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 24px auto;
+        }
+
+        /* Sub-Header Navigation Link */
+        .nav-header-container {
+            max-width: 1080px;
+            margin: -32px auto 40px auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-header-bar {
+            background: var(--surface);
+            padding: 12px 24px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border);
+        }
+
+        .nav-header-bar a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .nav-header-bar a:hover {
+            color: var(--primary-dark);
+        }
+
+        /* Main Container */
+        .main-container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 32px;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            position: sticky;
+            top: 24px;
+            height: fit-content;
+            background: var(--surface);
+            padding: 24px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .sidebar-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--text-faint);
+            letter-spacing: 0.8px;
+            margin-bottom: 16px;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 10px 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: var(--surface-muted);
+            color: var(--primary);
+        }
+
+        .nav-link.active {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* Action Buttons */
+        .sidebar-actions {
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn-outline {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            background: white;
+            color: var(--text-primary);
+            font-weight: 700;
+            font-size: 0.88rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: rgba(139, 92, 246, 0.04);
+        }
+
+        /* Document Body Content */
+        .content-card {
+            background: var(--surface);
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .doc-section {
+            margin-bottom: 40px;
+            scroll-margin-top: 30px;
+        }
+
+        .doc-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .doc-section h2 {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: -0.3px;
+        }
+
+        .doc-section h2 .icon-badge {
+            width: 36px;
+            height: 36px;
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--primary);
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .doc-section p {
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+            margin-bottom: 14px;
+        }
+
+        .doc-section ul {
+            margin-left: 20px;
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+            font-size: 0.96rem;
+        }
+
+        .doc-section li {
+            margin-bottom: 8px;
+        }
+
+        .highlight-box {
+            background: var(--surface-muted);
+            border-left: 4px solid var(--primary);
+            padding: 18px 22px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin: 20px 0;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        /* Search Input */
+        .search-box {
+            margin-bottom: 28px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 18px 14px 44px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            background: var(--surface-muted);
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.12);
+        }
+
+        .search-box svg {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            fill: var(--text-faint);
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Footer */
+        .footer {
+            max-width: 1080px;
+            margin: 40px auto 0 auto;
+            text-align: center;
+            color: var(--text-faint);
+            font-size: 0.88rem;
+            padding: 0 20px;
+        }
+
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 868px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                display: none;
+            }
+            .content-card {
+                padding: 24px;
+            }
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+        }
+
+        @media print {
+            .hero, .nav-header-container, .sidebar, .search-box, .footer {
+                display: none !important;
+            }
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            .content-card {
+                border: none;
+                box-shadow: none;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Header -->
+    <header class="hero">
+        <div class="hero-badge">📜 Legal Agreement</div>
+        <h1>Terms & Conditions</h1>
+        <p>Please read these terms of service carefully before using the Vehicle Manager application.</p>
+    </header>
+
+    <!-- Navigation Sub-Header Bar -->
+    <div class="nav-header-container">
+        <div class="nav-header-bar">
+            <span>Last Updated: October 2026</span>
+            <a href="privacy_policy.html">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                View Privacy Policy →
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-container">
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-title">Sections</div>
+            <ul class="nav-list" id="sidebar-nav">
+                <!-- Dynamically Populated -->
+            </ul>
+
+            <div class="sidebar-actions">
+                <button class="btn-outline" onclick="window.print()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                    Print Terms
+                </button>
+                <button class="btn-outline" onclick="copyShareLink()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                    Copy Link
+                </button>
+            </div>
+        </aside>
+
+        <!-- Document Content -->
+        <main class="content-card">
+            
+            <div class="search-box">
+                <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                <input type="text" id="clause-search" placeholder="Search terms (e.g. license, liability, notifications)..." onkeyup="filterContent()">
+            </div>
+
+            <div class="doc-section" id="terms-acceptance">
+                <h2><span class="icon-badge">✍️</span> 1. Acceptance of Terms</h2>
+                <p>By downloading, installing, accessing, or using the <strong>Vehicle Manager</strong> mobile application, you agree to comply with and be bound by these Terms & Conditions. If you do not agree to these terms, you must not use or install the application.</p>
+                <div class="highlight-box">
+                    <strong>Note:</strong> These Terms apply to all users, including individuals managing personal vehicles and fleet operators managing multiple commercial vehicles.
+                </div>
+            </div>
+
+            <div class="doc-section" id="terms-license">
+                <h2><span class="icon-badge">📱</span> 2. License & Permitted Use</h2>
+                <p>We grant you a revocable, non-exclusive, non-transferable, limited license to download, install, and run Vehicle Manager strictly for personal or business fleet tracking in accordance with this agreement.</p>
+                <p>You agree NOT to:</p>
+                <ul>
+                    <li>Decompile, reverse engineer, disassemble, or attempt to derive the source code of the application.</li>
+                    <li>Modify, adapt, translate, or create derivative works based on the application UI or codebase.</li>
+                    <li>Use the app for any illegal purpose or in violation of local motor vehicle laws.</li>
+                </ul>
+            </div>
+
+            <div class="doc-section" id="terms-accuracy">
+                <h2><span class="icon-badge">🚗</span> 3. User Responsibility & Log Precision</h2>
+                <p>Vehicle Manager provides automated service notifications, mileage statistics, and expense summaries based on user input. You acknowledge that:</p>
+                <ul>
+                    <li>You are solely responsible for inputting accurate odometer readings, fuel bills, and maintenance schedules.</li>
+                    <li>Calculations (such as distance until next oil change or fuel efficiency estimates) depend directly on the promptness and accuracy of user logs.</li>
+                </ul>
+            </div>
+
+            <div class="doc-section" id="terms-notifications">
+                <h2><span class="icon-badge">🔔</span> 4. Device Notifications & Local Alarms</h2>
+                <p>Vehicle Manager utilizes local system notifications (`POST_NOTIFICATIONS` and exact alarms) to alert you about upcoming maintenance due dates, insurance renewals, and PUC expirations.</p>
+                <ul>
+                    <li>Notifications are triggered locally on your device. If your device is powered off, in silent/Do Not Disturb mode, or battery optimization restricts background processes, notification delivery may be affected.</li>
+                    <li>You may manage or disable notification permissions at any time via your device's System Settings.</li>
+                </ul>
+            </div>
+
+            <div class="doc-section" id="terms-intellectual-property">
+                <h2><span class="icon-badge">🛡️</span> 5. Intellectual Property Rights</h2>
+                <p>The application structure, database architecture, visual graphics, 3D avatar assets, custom widgets, and branding are the exclusive property of Vehicle Manager and are protected by applicable intellectual property laws.</p>
+            </div>
+
+            <div class="doc-section" id="terms-disclaimer">
+                <h2><span class="icon-badge">⚠️</span> 6. Disclaimer of Warranties & Limitation of Liability</h2>
+                <p>The application is provided on an <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> basis without warranties of any kind, whether express or implied.</p>
+                <div class="highlight-box">
+                    <strong>Limitation of Liability:</strong> In no event shall the app developers or owners be held liable for mechanical vehicle breakdowns, missed service appointments, third-party repair costs, fines, or loss of local data caused by device malfunction or accidental uninstallation.
+                </div>
+            </div>
+
+            <div class="doc-section" id="terms-backups">
+                <h2><span class="icon-badge">💾</span> 7. Data Backups & Export</h2>
+                <p>Vehicle Manager stores your database locally on your device. We recommend regularly using the <em>Settings &gt; Export Backup</em> feature to save a backup copy of your `.db` file in a secure location.</p>
+            </div>
+
+            <div class="doc-section" id="terms-modifications">
+                <h2><span class="icon-badge">🔄</span> 8. Modifications to Terms</h2>
+                <p>We reserve the right to update or modify these Terms & Conditions at any time. Continued use of the application following any changes constitutes acceptance of the new terms.</p>
+            </div>
+
+            <div class="doc-section" id="terms-contact">
+                <h2><span class="icon-badge">✉️</span> 9. Contact Us</h2>
+                <p>If you have any questions or concerns regarding these Terms & Conditions, please contact us through the app's official support channels.</p>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 Vehicle Manager. Built for Production. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function buildSidebarNav() {
+            const navList = document.getElementById('sidebar-nav');
+            navList.innerHTML = '';
+            
+            const sections = document.querySelectorAll('.doc-section');
+            sections.forEach((sec, idx) => {
+                const title = sec.querySelector('h2').innerText.replace(/^[^\s]+\s/, '');
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.className = 'nav-link' + (idx === 0 ? ' active' : '');
+                a.href = '#' + sec.id;
+                a.innerText = title;
+                a.onclick = (e) => {
+                    document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
+                    a.classList.add('active');
+                };
+                li.appendChild(a);
+                navList.appendChild(li);
+            });
+        }
+
+        function filterContent() {
+            const query = document.getElementById('clause-search').value.toLowerCase();
+            const sections = document.querySelectorAll('.doc-section');
+
+            sections.forEach(sec => {
+                const text = sec.innerText.toLowerCase();
+                if (text.includes(query)) {
+                    sec.style.display = 'block';
+                } else {
+                    sec.style.display = 'none';
+                }
+            });
+        }
+
+        function copyShareLink() {
+            navigator.clipboard.writeText(window.location.href);
+            alert('Terms & Conditions URL copied to clipboard!');
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            buildSidebarNav();
+        });
+    </script>
+</body>
+</html>
